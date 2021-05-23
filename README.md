@@ -1,6 +1,7 @@
-# Getting Started with Create React App
+# Getting Started
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Before running the app, copy the .env-SAMPLE file as .env.
 
 ## Available Scripts
 
@@ -68,3 +69,25 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Using My To Do List
+
+## Adding new items
+
+The top-most bar with the placeholder "New To Do Item" is where you input new To Do item.  The plus "+" sign is initially grey but will turn green when you start typing.  To save the new item, simply click the green plus sign.
+
+## Editing items
+
+Simply click on the title of the item you want to edit, any changes you made are automatically saved
+
+## Deleting items
+
+Each item on the list has a trash bin icon on the right side which can be clicked to delete the item.
+
+## Marking as completed
+
+Items with blue circle on the left side means they are 'active' (not completed).  Completed items has green circle check icon instead.  To mark or unmark an item as completed, simply click the icon on the left of the item.
+
+## Filtering items
+
+use the drop-down filter at the top of the page just below the headers to filter the list.
