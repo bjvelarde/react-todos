@@ -30,8 +30,6 @@ const todoReducer = (state, action) => {
     case ACTIONS.FETCH:
       return action.payload;
     case ACTIONS.ADD:
-      //action.payload.id = generateID();
-      console.log(action.payload);
       return {...state, data: [...state.data, action.payload]};
     case ACTIONS.EDIT:
       return {...state, data: state.data.map(i => i.id === action.payload.id ? {
