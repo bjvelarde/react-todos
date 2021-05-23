@@ -9,19 +9,25 @@ const ToDoItem = ({item}) => {
   const icon = item.completed ? faCheckCircle : faCircle;
   const color = item.completed ? 'green' : 'blue';
 
+  const handleToggleCheck = () => {
+    editTodo(item.id, item.title, !item.completed);
+  };
+
+  const handleChangeTitle = (e) => {
+    editTodo(item.id, e.target.value, item.completed);
+  };
+
+  const handleDelete = () => {
+    deleteTodo(item.id);
+  };
+
   return (
     <SC.ItemBox key={item.id}>
-      <FontAwesomeIcon icon={icon} color={color} onClick={() => {
-        editTodo(item.id, item.title, !item.completed);
-      }}/>
+      <FontAwesomeIcon icon={icon} color={color} onClick={handleToggleCheck}/>
       <SC.ListItem>
-        <SC.Input onChange={(e) => {
-          editTodo(item.id, e.target.value, item.completed);
-        }} defaultValue={item.title} />
+        <SC.Input onChange={handleChangeTitle} defaultValue={item.title} />
       </SC.ListItem>
-      <SC.DeleteIcon icon={faTrashAlt} onClick={() => {
-        deleteTodo(item.id);
-      }}/>
+      <SC.DeleteIcon icon={faTrashAlt} onClick={handleDelete}/>
     </SC.ItemBox>
   );
 };
