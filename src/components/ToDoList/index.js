@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import { Context } from '../../context';
-import ToDoItem from '../ToDoItem'
+import ToDoItem from '../ToDoItem';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faYinYang } from '@fortawesome/free-solid-svg-icons';
 import SC from './style';
 
 const TodoList = () => {
@@ -17,7 +19,7 @@ const TodoList = () => {
       ) : (
         state.data.filter(i => i.completed === (state.filter === 'completed')).map(i => <ToDoItem item={i} />)
       )
-    ) : <div>Loading...</div> }
+    ) : <FontAwesomeIcon icon={faYinYang} spin size="3x" color="#1a425e"/> }
   </SC.ListContainer>;
 }
 
