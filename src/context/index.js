@@ -44,7 +44,7 @@ const todoReducer = (state, action) => {
   }
 }
 
-const filterTodos = dispatch => async (filter) => {
+const filterTodos = dispatch => filter => {
   dispatch({ type: ACTIONS.FILTER, payload: filter })
 }
 
@@ -53,15 +53,15 @@ const fetchTodos = dispatch => async () => {
   dispatch({ type: ACTIONS.FETCH, payload: {data, filter: FILTER.ALL} })
 }
 
-const addTodo = dispatch => async title => {
+const addTodo = dispatch => title => {
   dispatch({ type: ACTIONS.ADD, payload: {id: generateId.next().value, title, completed: false} })
 }
 
-const editTodo = dispatch => async (id, title, completed) => {
+const editTodo = dispatch => (id, title, completed) => {
   dispatch({ type: ACTIONS.EDIT, payload: {id, title, completed} })
 }
 
-const deleteTodo = dispatch => async id => {
+const deleteTodo = dispatch => id => {
   dispatch({ type: ACTIONS.DELETE, payload: id })
 }
 
