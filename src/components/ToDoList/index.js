@@ -1,5 +1,5 @@
 import React, { useContext, useEffect } from 'react';
-import { Context } from '../../context';
+import { FILTER, Context } from '../../context';
 import ToDoItem from '../ToDoItem';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faYinYang } from '@fortawesome/free-solid-svg-icons';
@@ -17,7 +17,7 @@ const TodoList = () => {
       state.filter === 'all' ? (
         state.data.map(i => <ToDoItem item={i} />)
       ) : (
-        state.data.filter(i => i.completed === (state.filter === 'completed')).map(i => <ToDoItem item={i} />)
+        state.data.filter(i => i.completed === (state.filter === FILTER.COMPLETED)).map(i => <ToDoItem item={i} />)
       )
     ) : <FontAwesomeIcon icon={faYinYang} spin size="3x" color="#1a425e"/> }
   </SC.ListContainer>;
